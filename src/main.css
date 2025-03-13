@@ -1,0 +1,150 @@
+/* General Page Styling */
+body {
+    background-color: #F9F9F9; /* Nice off-white background */
+    color: #000;  /* Default text color for readability */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #CC0000; /* Illinois Tech Red */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+.navbar a {
+    color: #FFF;  /* Clean white text for contrast */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #76777B; /* Illinois Tech Gray for hover */
+    color: #FF9900; /* Alternate Illinois Tech color for emphasis */
+    border-radius: 5px;
+}
+
+/* Sidebar Styles */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    background-color: #F0F0F0; /* Illinois Tech Black */
+    color: #000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidenav a {
+    color: #DCDCDC; /* Light gray text for clarity */
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+
+/* Main Content */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;  /* Clean white content section */
+    color: #000; /* Default text color */
+    border-left: 5px solid #CC0000; /* Strong visual identity */
+}
+
+h1 {
+    margin-top: 70px;
+}
+
+.blue-text {
+    color: darkblue; /* Bright, vibrant blue */
+    font-weight: bold; /* Optional: Emphasize the text */
+}
+
+
+.caption {
+    font-size: 0.9rem;       /* Slightly smaller text */
+    color: #76777B;          /* Illinois Tech Gray for subtlety */
+    font-style: italic;      /* Optional: Emphasizes caption tone */
+    margin-top: 5px;         /* Spacing above the caption */
+    text-align: center;      /* Centers the caption under images */
+}
+/* Floating Sidebars for In-Content Notes */
+.sidebar-note {
+    background-color: #F0F0F0; /* Softer off-white */
+    border-left: 5px solid #CC0000; /* Red accent */
+    padding: 15px;
+    margin: 20px 0;
+    width: 40%;
+    float: right;
+    clear: both;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-note h3 {
+    margin-top: 0;
+    color: #CC0000; /* Illinois Tech Red for headings */
+}
+
+/* Buttons for Interactive Elements */
+.btn {
+    background-color: #CC0000; /* Illinois Tech Red */
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #76777B; /* Illinois Tech Gray */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+
+    .main, .content {
+        margin-left: 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+    }
+
+    .sidebar-note {
+        width: 100%;
+        float: none;
+    }
+}
