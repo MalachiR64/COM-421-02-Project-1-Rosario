@@ -1,7 +1,7 @@
 /* General Page Styling */
 body {
-    background-color: #F9F9F9; /* Nice off-white background */
-    color: #000;  /* Default text color for readability */
+    background-color: #E8E8E8; /* Darker off-white background */
+    color:  #2C3E50;  /* Default text color for readability */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,12 +10,12 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background-color: #CC0000; /* Illinois Tech Red */
+    background-color: #123360; /* Illinois Tech Red */
     overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 2;
     display: flex;
     justify-content: space-around;
@@ -24,7 +24,7 @@ body {
 }
 
 .navbar a {
-    color: #FFF;  /* Clean white text for contrast */
+    color: #FAFAFA;  
     text-decoration: none;
     padding: 10px 15px;
     font-size: 18px;
@@ -34,45 +34,51 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #76777B; /* Illinois Tech Gray for hover */
-    color: #FF9900; /* Alternate Illinois Tech color for emphasis */
+    color: #BF9B30; /* Alternate Illinois Tech color for emphasis */
     border-radius: 5px;
 }
 
 /* Sidebar Styles */
 .sidenav {
-    height: 100%;
-    width: 200px;
+    height: calc(100vh - 50px);
+    width: 250px;
     position: fixed;
     top: 50px;
     left: 0;
-    background-color: #F0F0F0; /* Illinois Tech Black */
-    color: #000;
+    background-color: #E8E8E8; /* Darker off-white background */
+    color: #2C3E50;
     padding: 20px;
     overflow-y: auto;
+    z-index: 1;
+    box-sizing: border-box;
 }
-
-.sidenav a {
-    color: #DCDCDC; /* Light gray text for clarity */
-    text-decoration: none;
-    display: block;
-    padding: 8px 0;
-    transition: color 0.3s ease;
-}
-
 
 /* Main Content */
 .content {
-    margin-left: 220px;
-    padding: 20px;
+    margin-left: 270px;
+    margin-top: 50px;  /* Add space for navbar */
+    min-height: calc(100vh - 50px);
+    padding: 20px 40px;
     box-sizing: border-box;
-    background-color: #FFFFFF;  /* Clean white content section */
-    color: #000; /* Default text color */
-    border-left: 5px solid #CC0000; /* Strong visual identity */
+    background-color: #FFFFFF;  /* Pure white for better contrast with  sidenav */
+    color: #2C3E50; /* Default text color */
+    position: relative;
+    width: calc(100% - 270px);
+    max-width: 1200px; /* Increased from 960px */
+    line-height: 1.6;
+}
+
+p {
+    max-width: 85ch; /* Increased from 70ch for wider content */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
-    margin-top: 70px;
+    margin-top: 20px; /* Reduce top margin of h1 */
 }
 
 .blue-text {
@@ -89,18 +95,18 @@ h1 {
     text-align: center;      /* Centers the caption under images */
 }
 /* Floating Sidebars for In-Content Notes */
-.sidebar-note {
-    background-color: #F0F0F0; /* Softer off-white */
-    border-left: 5px solid #CC0000; /* Red accent */
+aside {
+    background-color: #E8E8E8; /* Darker off-white background */
+    border-left: 5px solid#CC0000; /* Red accent */
     padding: 15px;
-    margin: 20px 0;
+    margin: 20px 0 20px 20px;  /* Added left margin */
     width: 40%;
     float: right;
     clear: both;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-note h3 {
+aside h3 {
     margin-top: 0;
     color: #CC0000; /* Illinois Tech Red for headings */
 }
@@ -126,7 +132,8 @@ h1 {
     .sidenav {
         width: 100%;
         position: relative;
-        top: 0;
+        top: 50px;
+        height: auto;
     }
 
     .main, .content {
@@ -143,8 +150,15 @@ h1 {
         width: 100%;
     }
 
-    .sidebar-note {
+    aside {
         width: 100%;
         float: none;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 50px;
+        width: 100%;
+        padding: 20px 15px;
     }
 }
